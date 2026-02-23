@@ -1,16 +1,16 @@
 # My Project
 
 
-Below are the **explicit calculation formulas** shown in the paper (including the Appendix state-update equations). I’m grouping them by subsystem to keep it readable:
+Below are the explicit calculation formulas shown in the article (including the equations for updating the attachment state). All of these formulas are used in the code. I'm grouping them by subsystem to maintain readability:
 
 ---
 
 ## A) Ventilation / airflow sub-model
 
 **(1) Leakage flow factor (low wind)**
-[
+$$
 f_{\text{leakage}}=0.25,c_{\text{leakage}},\quad u<0.25\ \text{m s}^{-1}
-]
+$$
 Variables: (f_{\text{leakage}}) leakage flow factor; (c_{\text{leakage}}) leakage constant; (u) outdoor wind speed. 
 
 **(1) Leakage flow factor (higher wind)**
