@@ -8,8 +8,11 @@ Below are the explicit calculation formulas shown in the article (including the 
 ## A) Ventilation / airflow sub-model
 
 **(1) Leakage flow factor (low wind)**
+#[
+#f_{\text{leakage}}=0.25,c_{\text{leakage}},\quad u<0.25\ \text{m s}^{-1}
+#]
 $$
-f_{\text{leakage}}=0.25,c_{\text{leakage}},\quad u<0.25\ \text{m s}^{-1}
+f_{\text{leakage}} = 0.25\,c_{\text{leakage}}, \quad u < 0.25\ \text{m s}^{-1}
 $$
 Variables: (f_{\text{leakage}}) leakage flow factor; (c_{\text{leakage}}) leakage constant; (u) outdoor wind speed. 
 
