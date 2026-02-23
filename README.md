@@ -1,17 +1,22 @@
 # Project single-zone lumped energy balance (0D “well-mixed air”)
 
-Reference:
-@article{Nauta2024GreenhouseEnergyModel,
-  title   = {A new greenhouse energy model for predicting the year-round interior microclimate of a commercial greenhouse in Ontario, Canada},
-  author  = {Nauta, Alex and Han, Jingjing and Tasnim, Syeda Humaira and Lubitz, William David},
-  journal = {Information Processing in Agriculture},
-  volume  = {11},
-  pages   = {438--456},
-  year    = {2024},
-  doi     = {10.1016/j.inpa.2023.06.002}
-}
 
-Below are the explicit calculation formulas shown in the article (including the equations for updating the attachment state). All of these formulas are used in the code. I'm grouping them by subsystem to maintain readability:
+## Reference
+
+Nauta, A., Han, J., Tasnim, S. H., & Lubitz, W. D. (2024).  
+**A new greenhouse energy model for predicting the year-round interior microclimate of a commercial greenhouse in Ontario, Canada.**  
+*Information Processing in Agriculture*, 11(3), 438–456.  
+https://doi.org/10.1016/j.inpa.2023.06.002  
+
+Received: 18 January 2022  
+Revised: 8 March 2023  
+Accepted: 28 June 2023  
+Available online: 30 June 2023  
+
+Publisher: China Agricultural University. Published by Elsevier B.V. on behalf of KeAi Communications Co. Ltd.  
+License: CC BY-NC-ND 4.0
+
+
 
 ---
 
