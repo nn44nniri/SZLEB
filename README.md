@@ -236,9 +236,11 @@ $$
 Variables: (h) convection coefficient; (T_{soil}) soil/floor temperature; (T_{air}) air temperature. 
 
 **(24) Plant canopy ↔ air convection**
+
 $$
 h=10;LAI
 $$
+
 Variables: (h) canopy-to-air convection coefficient; (LAI) leaf area index. 
 
 ---
@@ -246,22 +248,26 @@ Variables: (h) canopy-to-air convection coefficient; (LAI) leaf area index.
 ## G) Plant canopy radiation factors
 
 **(25) Canopy transmissivity to solar radiation (special case of Beer’s law)**
+
 $$
 \tau_{sol,7}=(1-\alpha_{sol,7}),\exp(-k_{att},LAI)
 $$
-Variables: (\tau_{sol,7}) canopy solar transmissivity; (\alpha_{sol,7}) canopy solar reflectivity; (k_{att}) canopy attenuation coefficient; (LAI) leaf area index. 
+
+Variables: ($\tau_{sol,7}$) canopy solar transmissivity; ($\alpha_{sol,7}$) canopy solar reflectivity; ($k_{att}$) canopy attenuation coefficient; (LAI) leaf area index. 
 
 **(26) Canopy “area factor” used for IR pathways**
+
 $$
 A_{canopy}=1-\exp(-k_{FIR},LAI)
 $$
-Variables: (A_{canopy}) plant area factor (effective emitting/absorbing area ratio); (k_{FIR}) IR extinction coefficient; (LAI) leaf area index. 
+
+Variables: ($A_{canopy}$) plant area factor (effective emitting/absorbing area ratio); ($k_{FIR}$) IR extinction coefficient; (LAI) leaf area index. 
 
 ---
 
 ## H) Heat-transfer pathway formulas (Table 3 excerpts)
 
-Table 3 contains **many** individual pathway equations (solar, IR, conduction, ventilation, heating). The IR terms repeatedly use the Stefan–Boltzmann form “(\sigma \times) (view/coverage factors) (\times) ((\varepsilon_i T_i^4 - \varepsilon_j T_j^4))”. Examples explicitly visible in the parsed text include:  
+Table 3 contains **many** individual pathway equations (solar, IR, conduction, ventilation, heating). The IR terms repeatedly use the Stefan–Boltzmann form “($\sigma$ $\times$) (view/coverage factors) ($\times$) ($(\varepsilon_i T_i^4 - \varepsilon_j T_j^4)$)”. Examples explicitly visible in the parsed text include:  
 
 * (Q_{IR,7\to6}=\sigma,A_{crop},A_{canopy},(\varepsilon_7 T_7^4-\varepsilon_6 T_6^4)) (plant ↔ potted soil) 
 * (Q_{IR,14\to13}=\sigma,A_{crop},(\varepsilon_{14} T_{14}^4-\varepsilon_{13} T_{13}^4)) (floor ↔ bottom soil layer) 
