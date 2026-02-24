@@ -43,13 +43,15 @@ $$
 f_{\text{mini}}=\frac{V,A_{\text{vent}}}{200},C_D,C_W^{0.5},u
 $$
 
-Variables: (f_{\text{mini}}) mini-vent volumetric flow; (V) vent opening \% (0–100); (A_{\text{vent}}) vent area; (C_D) discharge coefficient; (C_W) wind-effect coefficient; (u) wind speed. 
+Variables: ($f_{\text{mini}}$) mini-vent volumetric flow; (V) vent opening \% (0–100); ($A_{\text{vent}}$) vent area; ($C_D$) discharge coefficient; ($C_W$) wind-effect coefficient; (u) wind speed. 
 
 
 **(3) Latent heat exchange due to ventilation (moisture exchange)**
+
 $$
 Q_{\text{latent}}=\frac{R_a}{3600},dx,k,(v_{\text{inside}}-v_{\text{outside}})
 $$
+
 Variables: (Q_{\text{latent}}) latent heat flux due to air exchange; (R_a) air renewal rate (h(^{-1})); (dx) air-layer thickness; (k) latent heat of condensation; (v) absolute humidity (kg m(^{-3})). 
 
 ---
