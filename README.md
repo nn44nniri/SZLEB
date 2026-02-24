@@ -42,7 +42,7 @@ Variables: same as above.
 $$
 f_{\text{mini}}=\frac{V,A_{\text{vent}}}{200},C_D,C_W^{0.5},u
 
-Variables: (f_{\text{mini}}) mini-vent volumetric flow; (V) vent opening % (0–100); (A_{\text{vent}}) vent area; (C_D) discharge coefficient; (C_W) wind-effect coefficient; (u) wind speed. 
+Variables: (f_{\text{mini}}) mini-vent volumetric flow; (V) vent opening \% (0–100); (A_{\text{vent}}) vent area; (C_D) discharge coefficient; (C_W) wind-effect coefficient; (u) wind speed. 
 $$
 
 **(3) Latent heat exchange due to ventilation (moisture exchange)**
