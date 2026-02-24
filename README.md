@@ -18,6 +18,10 @@ The package is organized as a small reusable library (`greenhouse_estimator`) wi
 This makes SZLEB suitable as a **low-cost alternative to CFD** when the objective is to estimate **zone-average climate behavior and energy usage** quickly, while still retaining a physically interpretable structure.  
 
 ---
+Report :
+![Report Image](./images/Figure_1.png)
+
+---
 
 
 ## Reference
