@@ -411,6 +411,6 @@ These are the **discrete-time layer temperature updates** ($dT_i$) (energy balan
 
 **Variables (shared across Appendix equations):** 
 
-(dt) timestep; ($dT_i$) temperature change of layer (i); ($c_i$,$\rho_i$,$dx_i$) heat capacity, density, thickness of layer (i); each ($Q_{*}$) is a heat-flux pathway term named by its physics and direction (e.g., convection, conduction, radiation, ventilation, heaters, lights, pads, dehumidifier). 
+(dt) timestep; ($dT_i$) temperature change of layer (i); ($c_i,\rho_i,dx_i$) heat capacity, density, thickness of layer (i); each ($Q_{*}$) is a heat-flux pathway term named by its physics and direction (e.g., convection, conduction, radiation, ventilation, heaters, lights, pads, dehumidifier). 
 
 
