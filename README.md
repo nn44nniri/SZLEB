@@ -281,15 +281,14 @@ Other non-IR pathway formulas visible in Table 3 include:
 * **Ventilation sensible heat loss**
 
   
-  $Q_{vent,4&6}$= $\frac{R_a}{3600}$,($dx_4+dx_6$),$\rho_{air}$,$c_{air}$,($T_6-T_{amb}$)
+  $Q_{vent,4 &6}$= $\frac{R_a}{3600}$,($dx_4$+$dx_6$),$\rho_{air}$,$c_{air}$,($T_6$ - $T_{amb}$)
   
   Variables: ($R_a$) air renewal rate; ($dx_4,dx_6$) air-layer thicknesses; ($T_6$) lower-air temperature; ($T_{amb}$) ambient outdoor temp. 
 
 * **HRV sensible heat transfer**
   
-  $$
-  Q_{HRV}=\frac{f_{HRV},\rho_{air},c_{air},(T_{out,HRV}-T_{in,HRV})}{SA}
-  $$
+  
+  $Q_{HRV}=\frac{f_{HRV},\rho_{air},c_{air},(T_{out,HRV}-T_{in,HRV})}{SA}$
   
   Variables: ($f_{HRV}$) HRV airflow; ($T_{out,HRV},T_{in,HRV}$) HRV outlet/inlet temps; (SA) surface area. 
 
