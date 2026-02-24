@@ -1,5 +1,24 @@
 # Project single-zone lumped energy balance (0D “well-mixed air”)
 
+## Introduction
+
+**SZLEB (Single-Zone Lumped Energy Balance)** is a lightweight Python library for simulating the **average indoor greenhouse microclimate** and **actuator-related energy use** in a **single well-mixed air zone**. It is designed for fast engineering estimation, prototyping, and control-oriented workflows (for example, rule-based control, optimization, or future Gym/RL wrapping), where the goal is to predict variables such as **indoor air temperature**, **relative humidity**, and **air exchange / airflow proxies** under different actuator settings. 
+
+This module is inspired by the **physics-based lumped capacitance greenhouse modeling approach** described in the attached article by **Nauta et al.**, which models greenhouse microclimate using transient energy and moisture balances and emphasizes that such models are far less computationally intensive than CFD while remaining practical for simulation and design studies. The article also includes key components used in this library’s simplified formulation, such as ventilation-driven sensible/latent exchange, psychrometric relationships (Magnus–Tetens / absolute humidity), and canopy-related transpiration / convection terms (including the (h = 10 \times LAI) canopy-air convection relationship). 
+
+The current SZLEB implementation is **not a full reproduction** of the multi-layer commercial greenhouse model in the paper. Instead, it provides a **compact single-zone abstraction** that preserves the core structure of coupled **energy + moisture balance** calculations, while making it easier to integrate into software pipelines. In particular, the library adds a practical actuator interface that maps user-facing commands (**vents**, **fans**, **heater** with ON/OFF, activity %, and active duration) to physics-facing quantities such as **ACH** and **heater thermal power**, and also tracks **per-actuator energy consumption** (e.g., heater gas use and electrical consumption of heater auxiliaries, cooling fans, and vent motors). 
+
+The package is organized as a small reusable library (`greenhouse_estimator`) with clear modules for:
+
+* **Actuator command and mapping logic**
+* **Model dataclasses** (geometry, outside conditions, building parameters, coupling parameters)
+* **Psychrometric utilities**
+* **Core simulator** (time stepping, energy/moisture coupling, cumulative energy bookkeeping)
+
+This makes SZLEB suitable as a **low-cost alternative to CFD** when the objective is to estimate **zone-average climate behavior and energy usage** quickly, while still retaining a physically interpretable structure.  
+
+---
+
 
 ## Reference
 
