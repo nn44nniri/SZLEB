@@ -136,81 +136,103 @@ $$
 Variables: ($v_{outside}$) absolute humidity (kg $m^{-3}$); ($e_s$) saturated vapor pressure (Pa); (RH) relative humidity (%); (T) air temperature (K here); ($C_{vap}$) water-vapor gas constant/“heat capacity” term used by authors (461.5 J $kg^{-1}$ $K^{-1}$). 
 
 **(13) Saturated vapor pressure (Magnus–Tetens)**
+
 $$
 e_s=610.94;\exp!\left(\frac{17.625,T}{243.04+T}\right)
 $$
-Variables: (e_s) saturated vapor pressure (Pa); (T) temperature (°C in this formula). 
+
+Variables: ($e_s$) saturated vapor pressure (Pa); (T) temperature (°C in this formula). 
 
 ---
 
 ## D) Plant transpiration and moisture balance
 
 **(14) Transpiration latent heat flux**
+
 $$
 Q_{trans}=k;VEC;(e_s-e_{air})
 $$
-Variables: (Q_{trans}) transpiration heat flux; (k) latent heat term; (VEC) vapor exchange coefficient; (e_s) saturated vapor pressure; (e_{air}) air vapor pressure (authors compute from (e_s) and RH). 
+
+Variables: ($Q_{trans}$) transpiration heat flux; (k) latent heat term; (VEC) vapor exchange coefficient; ($e_s$) saturated vapor pressure; ($e_{air}$) air vapor pressure (authors compute from ($e_s$) and RH). 
 
 **(15) Vapor exchange coefficient**
+
 $$
 VEC=\frac{2,c_{air},\rho_{air},LAI}{k,\gamma,(r_b+r_s)}
 $$
-Variables: (c_{air}) air heat capacity; (\rho_{air}) air density; (LAI) leaf area index; (\gamma) psychrometric constant; (r_b) boundary-layer resistance; (r_s) stomatal resistance; (k) latent heat term. 
+
+Variables: ($c_{air}$) air heat capacity; ($\rho_{air}$) air density; (LAI) leaf area index; ($\gamma$) psychrometric constant; ($r_b$) boundary-layer resistance; ($r_s$) stomatal resistance; (k) latent heat term. 
 
 **(16) Canopy stomatal resistance (empirical)**
+
 $$
 r_s=82+570;\exp!\left(-\frac{k_{tp},R_n}{LAI}\right)\left(1+0.023,(T-20)^2\right)
 $$
-Variables: (r_s) stomatal resistance; (k_{tp}) crop transpiration parameter; (R_n) net radiation; (LAI) leaf area index; (T) air temperature (°C). 
+
+Variables: ($r_s$) stomatal resistance; ($k_{tp}$) crop transpiration parameter; ($R_n$) net radiation; (LAI) leaf area index; (T) air temperature (°C). 
 
 **(17) Change in absolute humidity in the greenhouse air (moisture budget core)**
+
 $$
 dAH=\frac{dt,(Q_{trans}-Q_{latent})}{k;dx_{airlayers}}
 $$
-Variables: (dAH) change in absolute humidity (kg m(^{-3})); (dt) timestep; (Q_{trans}) transpiration term; (Q_{latent}) ventilation moisture-loss term; (k) latent heat term; (dx_{airlayers}) combined air-layer thickness. 
+
+Variables: (dAH) change in absolute humidity (kg $m^{-3}$); (dt) timestep; ($Q_{trans}$) transpiration term; ($Q_{latent}$) ventilation moisture-loss term; (k) latent heat term; ($dx_{airlayers}$) combined air-layer thickness. 
 
 ---
 
 ## E) Radiant sky temperature and sky emissivity
 
 **(18) Radiant sky temperature (as printed; PDF parsing is cramped but structure is clear)**
+
 $$
 T_{sky}=\Big((1-f),\varepsilon_{sky},(T_{amb}+273.15)^4+f,(T_{amb}+273.15)^4\Big)^{0.25}-273.15
 $$
-Variables: (T_{sky}) radiant sky temperature (°C); (f) cloud fraction; (\varepsilon_{sky}) sky emissivity; (T_{amb}) ambient outdoor temperature (°C). 
+
+Variables: ($T_{sky}$) radiant sky temperature (°C); (f) cloud fraction; ($\varepsilon_{sky}$) sky emissivity; ($T_{amb}$) ambient outdoor temperature (°C). 
 
 **(19) Sky emissivity**
+
 $$
 \varepsilon_{sky}=0.736+0.00577,T_{dp}
 $$
-Variables: (\varepsilon_{sky}) sky emissivity; (T_{dp}) dewpoint temperature (°C). 
+
+Variables: ($\varepsilon_{sky}$) sky emissivity; ($T_{dp}$) dewpoint temperature (°C). 
 
 **(20) Dewpoint temperature from RH and ambient temperature**
+
 $$
 T_{dp}=\left(\frac{RH}{100}\right)^{1/8}\big(112+0.9,T_{amb}\big)+0.1,T_{amb}-112
 $$
-Variables: (T_{dp}) dewpoint (°C); (RH) relative humidity (%); (T_{amb}) ambient outdoor temperature (°C). 
+
+Variables: ($T_{dp}$) dewpoint (°C); (RH) relative humidity (%); ($T_{amb}$) ambient outdoor temperature (°C). 
 
 ---
 
 ## F) Convective heat transfer coefficients (Table 2)
 
 **(21) Outside convection at glazing**
+
 $$
 h=7.2+3.84,u
 $$
+
 Variables: (h) convective heat transfer coefficient; (u) wind speed. 
 
 **(22) Internal air ↔ glazing/curtain convection**
+
 $$
 h=2.21,(T_{air}-T_{cov})^{0.33}\quad \text{for }0.3 < (T_{air}-T_{cov})<13.8^\circ\text{C}
 $$
-Variables: (h) convection coefficient; (T_{air}) air temperature; (T_{cov}) cover temperature. 
+
+Variables: (h) convection coefficient; ($T_{air}$) air temperature; ($T_{cov}$) cover temperature. 
 
 **(23) Soil/floor ↔ air convection**
+
 $$
 h=10;\big|;T_{soil}-T_{air};\big|^{0.33}
 $$
+
 Variables: (h) convection coefficient; (T_{soil}) soil/floor temperature; (T_{air}) air temperature. 
 
 **(24) Plant canopy ↔ air convection**
