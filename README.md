@@ -267,7 +267,7 @@ Variables: ($A_{canopy}$) plant area factor (effective emitting/absorbing area r
 
 ## H) Heat-transfer pathway formulas (Table 3 excerpts)
 
-Table 3 contains **many** individual pathway equations (solar, IR, conduction, ventilation, heating). The IR terms repeatedly use the Stefan–Boltzmann form “($\sigma$ $\times$) (view/coverage factors) ($\times$) ($(\varepsilon_i T_i^4 - \varepsilon_j T_j^4)$)”. Examples explicitly visible in the parsed text include:  
+Table 3 contains **many** individual pathway equations (solar, IR, conduction, ventilation, heating). The IR terms repeatedly use the Stefan–Boltzmann form “($\sigma$ $\times$) (view/coverage factors) ($\times$) (($\varepsilon_i$ $T_i^4$ - $\varepsilon_j$ $T_j^4$))”. Examples explicitly visible in the parsed text include:  
 
 * (Q_{IR,7\to6}=\sigma,A_{crop},A_{canopy},(\varepsilon_7 T_7^4-\varepsilon_6 T_6^4)) (plant ↔ potted soil) 
 * (Q_{IR,14\to13}=\sigma,A_{crop},(\varepsilon_{14} T_{14}^4-\varepsilon_{13} T_{13}^4)) (floor ↔ bottom soil layer) 
