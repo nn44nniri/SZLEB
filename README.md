@@ -31,21 +31,21 @@ $$
 Variables: $f_{\text{leakage}}$ leakage flow factor; $c_{\text{leakage}}$ leakage constant; $u$ outdoor wind speed.
 
 **(1) Leakage flow factor (higher wind)**
-[
+$$
 f_{\text{leakage}}=u,c_{\text{leakage}},\quad u\ge 0.25\ \text{m s}^{-1}
-]
+$$
 Variables: same as above. 
 
 **(2) Mini-vent ventilation flow**
-[
+$$
 f_{\text{mini}}=\frac{V,A_{\text{vent}}}{200},C_D,C_W^{0.5},u
-]
+$$
 Variables: (f_{\text{mini}}) mini-vent volumetric flow; (V) vent opening % (0–100); (A_{\text{vent}}) vent area; (C_D) discharge coefficient; (C_W) wind-effect coefficient; (u) wind speed. 
 
 **(3) Latent heat exchange due to ventilation (moisture exchange)**
-[
+$$
 Q_{\text{latent}}=\frac{R_a}{3600},dx,k,(v_{\text{inside}}-v_{\text{outside}})
-]
+$$
 Variables: (Q_{\text{latent}}) latent heat flux due to air exchange; (R_a) air renewal rate (h(^{-1})); (dx) air-layer thickness; (k) latent heat of condensation; (v) absolute humidity (kg m(^{-3})). 
 
 ---
@@ -53,51 +53,51 @@ Variables: (Q_{\text{latent}}) latent heat flux due to air exchange; (R_a) air r
 ## B) Dehumidification (MRD/HRV) and evaporative cooling pad
 
 **(4) Heat released to air by mechanical refrigeration dehumidifier (MRD)**
-[
+$$
 Q_{DH}=0.9,Q_{eo}+\frac{m_{\text{water}},k}{900}\cdot\frac{1000}{0.25}\cdot\frac{1}{SA}
-]
+$$
 Variables: (Q_{DH}) dehumidifier heat flux to air; (Q_{eo}) electrical energy (kWh); (m_{\text{water}}) water removed (kg); (k) latent heat; (SA) greenhouse surface area. 
 
 **(5) Moisture removed by HRV per timestep**
-[
+$$
 M_{\text{removed}}=(15\ \text{min})\cdot\frac{60\ \text{s}}{\text{min}}\cdot f_{HRV},(v_{out}-v_{in})
-]
+$$
 Variables: (M_{\text{removed}}) moisture removed in the timestep (litres, per text); (f_{HRV}) supply airflow (m(^3) s(^{-1})); (v) absolute humidity (kg m(^{-3})) at HRV outlet/inlet. 
 
 **(6) Cooling-pad outlet air temperature**
-[
+$$
 T_{pad}=T_{out}-g,(T_{out}-T_{out,wb})
-]
+$$
 Variables: (T_{pad}) pad outlet temperature; (T_{out}) outdoor dry-bulb temp; (T_{out,wb}) outdoor wet-bulb temp; (g) pad efficiency. 
 
 **(7) Wet-bulb temperature approximation**
-[
+$$
 T_{out,wb}=T_{out}-\atan!\big(0.152,(RH_{out}+8.31)^{0.5}\big)+\atan(T_{out}+RH_{out})-\atan(RH_{out}-1.68)+0.00392,RH_{out}^{1.5},\atan(0.023,RH_{out})-4.69
-]
+$$
 Variables: (T_{out,wb}) wet-bulb temp; (T_{out}) dry-bulb temp; (RH_{out}) outdoor relative humidity (%). 
 
 **(8) Cooling-pad efficiency definition**
-[
+$$
 g=\frac{T_{out}-T_{pad}}{T_{out}-T_{out,wb}}
-]
+$$
 Variables: (g) pad efficiency; temps as above. 
 
 **(9) Sensible cooling from evaporative pad**
-[
+$$
 Q_{cool}=\frac{f_{evap},c_{air},\rho_{air},MV,CP,(T_{in}-T_{pad})}{SA}
-]
+$$
 Variables: (Q_{cool}) sensible cooling flux; (f_{evap}) pad ventilation flow; (c_{air}) air heat capacity; (\rho_{air}) air density; (MV) main-vent opening %; (CP) pad valve opening %; (T_{in}) indoor air temp; (SA) surface area. 
 
 **(10) Absolute humidity leaving the cooling pad**
-[
+$$
 v_{pad}=v_{outside}+g,(v_{sat}-v_{inside})
-]
+$$
 Variables: (v_{pad}) humidity at pad outlet; (v_{outside}) outdoor absolute humidity; (v_{sat}) saturated humidity of outdoor air; (v_{inside}) indoor absolute humidity; (g) pad efficiency. 
 
 **(11) Moisture added/removed by the cooling pad (per layer, per step)**
-[
+$$
 M_{CP}=\frac{f_{evap},dt,CP,MV,(v_{inside}-v_{pad})}{SA;dx_{airlayer}}
-]
+$$
 Variables: (M_{CP}) moisture change from pad; (dt) timestep; (dx_{airlayer}) air-layer thickness; others as above. 
 
 ---
@@ -105,15 +105,15 @@ Variables: (M_{CP}) moisture change from pad; (dt) timestep; (dx_{airlayer}) air
 ## C) Psychrometrics (RH ↔ absolute humidity, saturation vapor pressure)
 
 **(12) Absolute humidity from RH and temperature (modified ideal gas law form)**
-[
+$$
 v_{outside}=\frac{e_s,(RH/100)}{T;C_{vap}}
-]
+$$
 Variables: (v_{outside}) absolute humidity (kg m(^{-3})); (e_s) saturated vapor pressure (Pa); (RH) relative humidity (%); (T) air temperature (K here); (C_{vap}) water-vapor gas constant/“heat capacity” term used by authors (461.5 J kg(^{-1}) K(^{-1})). 
 
 **(13) Saturated vapor pressure (Magnus–Tetens)**
-[
+$$
 e_s=610.94;\exp!\left(\frac{17.625,T}{243.04+T}\right)
-]
+$$
 Variables: (e_s) saturated vapor pressure (Pa); (T) temperature (°C in this formula). 
 
 ---
@@ -121,27 +121,27 @@ Variables: (e_s) saturated vapor pressure (Pa); (T) temperature (°C in this for
 ## D) Plant transpiration and moisture balance
 
 **(14) Transpiration latent heat flux**
-[
+$$
 Q_{trans}=k;VEC;(e_s-e_{air})
-]
+$$
 Variables: (Q_{trans}) transpiration heat flux; (k) latent heat term; (VEC) vapor exchange coefficient; (e_s) saturated vapor pressure; (e_{air}) air vapor pressure (authors compute from (e_s) and RH). 
 
 **(15) Vapor exchange coefficient**
-[
+$$
 VEC=\frac{2,c_{air},\rho_{air},LAI}{k,\gamma,(r_b+r_s)}
-]
+$$
 Variables: (c_{air}) air heat capacity; (\rho_{air}) air density; (LAI) leaf area index; (\gamma) psychrometric constant; (r_b) boundary-layer resistance; (r_s) stomatal resistance; (k) latent heat term. 
 
 **(16) Canopy stomatal resistance (empirical)**
-[
+$$
 r_s=82+570;\exp!\left(-\frac{k_{tp},R_n}{LAI}\right)\left(1+0.023,(T-20)^2\right)
-]
+$$
 Variables: (r_s) stomatal resistance; (k_{tp}) crop transpiration parameter; (R_n) net radiation; (LAI) leaf area index; (T) air temperature (°C). 
 
 **(17) Change in absolute humidity in the greenhouse air (moisture budget core)**
-[
+$$
 dAH=\frac{dt,(Q_{trans}-Q_{latent})}{k;dx_{airlayers}}
-]
+$$
 Variables: (dAH) change in absolute humidity (kg m(^{-3})); (dt) timestep; (Q_{trans}) transpiration term; (Q_{latent}) ventilation moisture-loss term; (k) latent heat term; (dx_{airlayers}) combined air-layer thickness. 
 
 ---
@@ -149,21 +149,21 @@ Variables: (dAH) change in absolute humidity (kg m(^{-3})); (dt) timestep; (Q_{t
 ## E) Radiant sky temperature and sky emissivity
 
 **(18) Radiant sky temperature (as printed; PDF parsing is cramped but structure is clear)**
-[
+$$
 T_{sky}=\Big((1-f),\varepsilon_{sky},(T_{amb}+273.15)^4+f,(T_{amb}+273.15)^4\Big)^{0.25}-273.15
-]
+$$
 Variables: (T_{sky}) radiant sky temperature (°C); (f) cloud fraction; (\varepsilon_{sky}) sky emissivity; (T_{amb}) ambient outdoor temperature (°C). 
 
 **(19) Sky emissivity**
-[
+$$
 \varepsilon_{sky}=0.736+0.00577,T_{dp}
-]
+$$
 Variables: (\varepsilon_{sky}) sky emissivity; (T_{dp}) dewpoint temperature (°C). 
 
 **(20) Dewpoint temperature from RH and ambient temperature**
-[
+$$
 T_{dp}=\left(\frac{RH}{100}\right)^{1/8}\big(112+0.9,T_{amb}\big)+0.1,T_{amb}-112
-]
+$$
 Variables: (T_{dp}) dewpoint (°C); (RH) relative humidity (%); (T_{amb}) ambient outdoor temperature (°C). 
 
 ---
@@ -171,27 +171,27 @@ Variables: (T_{dp}) dewpoint (°C); (RH) relative humidity (%); (T_{amb}) ambien
 ## F) Convective heat transfer coefficients (Table 2)
 
 **(21) Outside convection at glazing**
-[
+$$
 h=7.2+3.84,u
-]
+$$
 Variables: (h) convective heat transfer coefficient; (u) wind speed. 
 
 **(22) Internal air ↔ glazing/curtain convection**
-[
+$$
 h=2.21,(T_{air}-T_{cov})^{0.33}\quad \text{for }0.3 < (T_{air}-T_{cov})<13.8^\circ\text{C}
-]
+$$
 Variables: (h) convection coefficient; (T_{air}) air temperature; (T_{cov}) cover temperature. 
 
 **(23) Soil/floor ↔ air convection**
-[
+$$
 h=10;\big|;T_{soil}-T_{air};\big|^{0.33}
-]
+$$
 Variables: (h) convection coefficient; (T_{soil}) soil/floor temperature; (T_{air}) air temperature. 
 
 **(24) Plant canopy ↔ air convection**
-[
+$$
 h=10;LAI
-]
+$$
 Variables: (h) canopy-to-air convection coefficient; (LAI) leaf area index. 
 
 ---
@@ -199,15 +199,15 @@ Variables: (h) canopy-to-air convection coefficient; (LAI) leaf area index.
 ## G) Plant canopy radiation factors
 
 **(25) Canopy transmissivity to solar radiation (special case of Beer’s law)**
-[
+$$
 \tau_{sol,7}=(1-\alpha_{sol,7}),\exp(-k_{att},LAI)
-]
+$$
 Variables: (\tau_{sol,7}) canopy solar transmissivity; (\alpha_{sol,7}) canopy solar reflectivity; (k_{att}) canopy attenuation coefficient; (LAI) leaf area index. 
 
 **(26) Canopy “area factor” used for IR pathways**
-[
+$$
 A_{canopy}=1-\exp(-k_{FIR},LAI)
-]
+$$
 Variables: (A_{canopy}) plant area factor (effective emitting/absorbing area ratio); (k_{FIR}) IR extinction coefficient; (LAI) leaf area index. 
 
 ---
@@ -226,29 +226,29 @@ Table 3 contains **many** individual pathway equations (solar, IR, conduction, v
 Other non-IR pathway formulas visible in Table 3 include:
 
 * **Ventilation sensible heat loss**
-  [
+  $$
   Q_{vent,4&6}=\frac{R_a}{3600},(dx_4+dx_6),\rho_{air},c_{air},(T_6-T_{amb})
-  ]
+  $$
   Variables: (R_a) air renewal rate; (dx_4,dx_6) air-layer thicknesses; (T_6) lower-air temperature; (T_{amb}) ambient outdoor temp. 
 
 * **HRV sensible heat transfer**
-  [
+  $$
   Q_{HRV}=\frac{f_{HRV},\rho_{air},c_{air},(T_{out,HRV}-T_{in,HRV})}{SA}
-  ]
+  $$
   Variables: (f_{HRV}) HRV airflow; (T_{out,HRV},T_{in,HRV}) HRV outlet/inlet temps; (SA) surface area. 
 
 * **Heating pipe convective input (upper/mid/lower)**
-  [
+  $$
   Q_{upper,mid,lower}=\frac{F,c_{water},(T_{in}-T_{out})}{SA}
-  ]
+  
   Variables: (F) hot-water mass flow term (as used by authors); (c_{water}) water heat capacity; (T_{in},T_{out}) pipe inlet/outlet water temps; (SA) surface area. 
-
+  $$
 * **Conduction through soil layers**
-  [
+  $$
   Q_{cond}=k_{soil},\frac{(T_n-T_{n-1})}{0.5,dx_n+0.5,dx_{n-1}}
-  ]
+  
   Variables: (k_{soil}) soil conductivity; (T_n,T_{n-1}) layer temperatures; (dx_n,dx_{n-1}) layer thicknesses. 
-
+  $$
 ---
 
 ## I) Core state-space / layer temperature update equations (Appendix)
