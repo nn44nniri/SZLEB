@@ -88,9 +88,6 @@ $$
 T_{out,wb}=T_{out}- atan \big(0.152,(RH_{out}+8.31)^{0.5}\big)+ atan(T_{out}+RH_{out})- atan(RH_{out}-1.68)+0.00392,RH_{out}^{1.5}, atan(0.023,RH_{out})-4.69
 $$
 
-$$
-T_{wb} = T \arctan\left(0.151977(RH + 8.313659)^{1/2}\right) + \arctan(T + RH) - \arctan(RH - 1.676331) + 0.00391838(RH)^{3/2} \arctan(0.023101 RH) - 4.686035
-$$
 
 Variables: ($T_{out,wb}$) wet-bulb temp; ($T_{out}$) dry-bulb temp; ($RH_{out}$) outdoor relative humidity (%). 
 
@@ -116,23 +113,27 @@ $$
 v_{pad}=v_{outside}+g,(v_{sat}-v_{inside})
 $$
 
-Variables: (v_{pad}) humidity at pad outlet; (v_{outside}) outdoor absolute humidity; (v_{sat}) saturated humidity of outdoor air; (v_{inside}) indoor absolute humidity; (g) pad efficiency. 
+Variables: ($v_{pad}$) humidity at pad outlet; ($v_{outside}$) outdoor absolute humidity; ($v_{sat}$) saturated humidity of outdoor air; ($v_{inside}$) indoor absolute humidity; (g) pad efficiency. 
 
 **(11) Moisture added/removed by the cooling pad (per layer, per step)**
+
 $$
 M_{CP}=\frac{f_{evap},dt,CP,MV,(v_{inside}-v_{pad})}{SA;dx_{airlayer}}
 $$
-Variables: (M_{CP}) moisture change from pad; (dt) timestep; (dx_{airlayer}) air-layer thickness; others as above. 
+
+Variables: ($M_{CP}$) moisture change from pad; (dt) timestep; ($dx_{airlayer}$) air-layer thickness; others as above. 
 
 ---
 
 ## C) Psychrometrics (RH ↔ absolute humidity, saturation vapor pressure)
 
 **(12) Absolute humidity from RH and temperature (modified ideal gas law form)**
+
 $$
 v_{outside}=\frac{e_s,(RH/100)}{T;C_{vap}}
 $$
-Variables: (v_{outside}) absolute humidity (kg m(^{-3})); (e_s) saturated vapor pressure (Pa); (RH) relative humidity (%); (T) air temperature (K here); (C_{vap}) water-vapor gas constant/“heat capacity” term used by authors (461.5 J kg(^{-1}) K(^{-1})). 
+
+Variables: ($v_{outside}$) absolute humidity (kg $m^{-3}$); ($e_s$) saturated vapor pressure (Pa); (RH) relative humidity (%); (T) air temperature (K here); ($C_{vap}$) water-vapor gas constant/“heat capacity” term used by authors (461.5 J $kg^{-1}$ $K^{-1}$). 
 
 **(13) Saturated vapor pressure (Magnus–Tetens)**
 $$
