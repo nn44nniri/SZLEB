@@ -72,7 +72,7 @@ $$
 M_{\text{removed}}=(15\ \text{min})\cdot\frac{60\ \text{s}}{\text{min}}\cdot f_{HRV},(v_{out}-v_{in})
 $$
 
-Variables: ($M_{\text{removed}}$) moisture removed in the timestep (litres, per text); ($f_{HRV}$) supply airflow ($m(^3) s(^{-1})$); (v) absolute humidity ($kg m(^{-3})$) at HRV outlet/inlet. 
+Variables: ($M_{\text{removed}}$) moisture removed in the timestep (litres, per text); ($f_{HRV}$) supply airflow ($m(^3)$ $s(^{-1})$); (v) absolute humidity (kg $m(^{-3})$) at HRV outlet/inlet. 
 
 **(6) Cooling-pad outlet air temperature**
 
