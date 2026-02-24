@@ -72,7 +72,7 @@ $$
 M_{\text{removed}}=(15\ \text{min})\cdot\frac{60\ \text{s}}{\text{min}}\cdot f_{HRV},(v_{out}-v_{in})
 $$
 
-Variables: ($M_{\text{removed}}$) moisture removed in the timestep (litres, per text); ($f_{HRV}$) supply airflow ($m^{3}$ $s^{-1}$); (v) absolute humidity ($kg m^{-3}$) at HRV outlet/inlet. 
+Variables: ($M_{\text{removed}}$) moisture removed in the timestep (litres, per text); ($f_{HRV}$) supply airflow ($m^{3}$ $s^{-1}$); (v) absolute humidity (kg $m^{-3}$) at HRV outlet/inlet. 
 
 **(6) Cooling-pad outlet air temperature**
 
@@ -80,30 +80,38 @@ $$
 T_{pad}=T_{out}-g,(T_{out}-T_{out,wb})
 $$
 
-Variables: (T_{pad}) pad outlet temperature; (T_{out}) outdoor dry-bulb temp; (T_{out,wb}) outdoor wet-bulb temp; (g) pad efficiency. 
+Variables: ($T_{pad}$) pad outlet temperature; ($T_{out}$) outdoor dry-bulb temp; ($T_{out,wb}$) outdoor wet-bulb temp; (g) pad efficiency. 
 
 **(7) Wet-bulb temperature approximation**
+
 $$
 T_{out,wb}=T_{out}-\atan!\big(0.152,(RH_{out}+8.31)^{0.5}\big)+\atan(T_{out}+RH_{out})-\atan(RH_{out}-1.68)+0.00392,RH_{out}^{1.5},\atan(0.023,RH_{out})-4.69
 $$
-Variables: (T_{out,wb}) wet-bulb temp; (T_{out}) dry-bulb temp; (RH_{out}) outdoor relative humidity (%). 
+
+Variables: ($T_{out,wb}$) wet-bulb temp; ($T_{out}$) dry-bulb temp; ($RH_{out}$) outdoor relative humidity (%). 
 
 **(8) Cooling-pad efficiency definition**
+
 $$
 g=\frac{T_{out}-T_{pad}}{T_{out}-T_{out,wb}}
 $$
+
 Variables: (g) pad efficiency; temps as above. 
 
 **(9) Sensible cooling from evaporative pad**
+
 $$
 Q_{cool}=\frac{f_{evap},c_{air},\rho_{air},MV,CP,(T_{in}-T_{pad})}{SA}
 $$
-Variables: (Q_{cool}) sensible cooling flux; (f_{evap}) pad ventilation flow; (c_{air}) air heat capacity; (\rho_{air}) air density; (MV) main-vent opening %; (CP) pad valve opening %; (T_{in}) indoor air temp; (SA) surface area. 
+
+Variables: ($Q_{cool}$) sensible cooling flux; ($f_{evap}$) pad ventilation flow; ($c_{air}$) air heat capacity; ($\rho_{air}$) air density; (MV) main-vent opening %; (CP) pad valve opening %; ($T_{in}$) indoor air temp; (SA) surface area. 
 
 **(10) Absolute humidity leaving the cooling pad**
+
 $$
 v_{pad}=v_{outside}+g,(v_{sat}-v_{inside})
 $$
+
 Variables: (v_{pad}) humidity at pad outlet; (v_{outside}) outdoor absolute humidity; (v_{sat}) saturated humidity of outdoor air; (v_{inside}) indoor absolute humidity; (g) pad efficiency. 
 
 **(11) Moisture added/removed by the cooling pad (per layer, per step)**
