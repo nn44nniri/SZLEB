@@ -281,7 +281,7 @@ Other non-IR pathway formulas visible in Table 3 include:
 * **Ventilation sensible heat loss**
 
   
-  $Q_{vent,4 \&6}= \frac{R_a}{3600},(dx_4+dx_6),\rho_{air},c_{air},(T_6 - T_{amb})$
+  $Q_{vent,4 \amp 6}= \frac{R_a}{3600},(dx_4+dx_6),\rho_{air},c_{air},(T_6 - T_{amb})$
   
   Variables: ($R_a$) air renewal rate; ($dx_4,dx_6$) air-layer thicknesses; ($T_6$) lower-air temperature; ($T_{amb}$) ambient outdoor temp. 
 
@@ -295,7 +295,7 @@ Other non-IR pathway formulas visible in Table 3 include:
 * **Heating pipe convective input (upper/mid/lower)**
   
   
-  $$Q_{upper,mid,lower}=\frac{F,c_{water},(T_{in}-T_{out})}{SA}$
+  $Q_{upper,mid,lower}=\frac{F,c_{water},(T_{in}-T_{out})}{SA}$
 
   Variables: (F) hot-water mass flow term (as used by authors); ($c_{water}$) water heat capacity; ($T_{in},T_{out}$) pipe inlet/outlet water temps; (SA) surface area. 
   
