@@ -52,7 +52,7 @@ $$
 Q_{\text{latent}}=\frac{R_a}{3600},dx,k,(v_{\text{inside}}-v_{\text{outside}})
 $$
 
-Variables: ($Q_{\text{latent}}$) latent heat flux due to air exchange; ($R_a$) air renewal rate ($h(^{-1})$); (dx) air-layer thickness; (k) latent heat of condensation; (v) absolute humidity (kg $m(^{-3})$). 
+Variables: ($Q_{\text{latent}}$) latent heat flux due to air exchange; ($R_a$) air renewal rate ($h^{-1}$); (dx) air-layer thickness; (k) latent heat of condensation; (v) absolute humidity (kg $m(^{-3})$). 
 
 ---
 
