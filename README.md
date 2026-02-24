@@ -323,71 +323,69 @@ These are the **discrete-time layer temperature updates** ($dT_i$) (energy balan
 
 * **(29)**
 
-  $
-  dT_3=\frac{dt,(Q_{solradref3}+Q_{conv4\to3}+Q_{IR5\to3}+Q_{IR12\to3}-Q_{cond3\to2})}{c_3\rho_3 dx_3}
-  $
   
+  $dT_3=\frac{dt,(Q_{solradref3}+Q_{conv4\to3}+Q_{IR5\to3}+Q_{IR12\to3}-Q_{cond3\to2})}{c_3\rho_3 dx_3}$
+
 * **(30)**
-  [
-  dT_4=\frac{dt,(Q_{conv4\to3}+Q_{solrad4}-Q_{vent4}+0.75,Q_{upper})}{c_4\rho_4 dx_4}
-  ]
+  
+  $dT_4=\frac{dt,(Q_{conv4\to3}+Q_{solrad4}-Q_{vent4}+0.75,Q_{upper})}{c_4\rho_4 dx_4}$
+
 * **(31)**
-  [
-  dT_6=\frac{dt,(Q_{solrad6}+Q_{conv7\to6}+Q_{conv8\to6}-0.5,Q_{trans7\to6}+Q_{conv14\to6}-Q_{vent6}-Q_{HRV}+Q_{mid}+0.25Q_{upper}+0.25Q_{lower}+Q_{gas}+Q_{light}-Q_{cool}+Q_{DH})}{c_6\rho_6 dx_6}
-  ]
+  
+  $dT_6=\frac{dt,(Q_{solrad6}+Q_{conv7\to6}+Q_{conv8\to6}-0.5,Q_{trans7\to6}+Q_{conv14\to6}-Q_{vent6}-Q_{HRV}+Q_{mid}+0.25Q_{upper}+0.25Q_{lower}+Q_{gas}+Q_{light}-Q_{cool}+Q_{DH})}{c_6\rho_6 dx_6}$
 * **(32)**
-  [
-  dT_7=\frac{dt,(Q_{solrad7}+Q_{solradref7}-Q_{conv7\to6}-Q_{IR7\to3}+Q_{IR8\to7}-0.5Q_{trans7\to6}-Q_{IR7\to sky})}{c_7\rho_7 dx_7}
-  ]
+
+  
+  $dT_7=\frac{dt,(Q_{solrad7}+Q_{solradref7}-Q_{conv7\to6}-Q_{IR7\to3}+Q_{IR8\to7}-0.5Q_{trans7\to6}-Q_{IR7\to sky})}{c_7\rho_7 dx_7}$
+
 * **(33)**
-  [
-  dT_8=\frac{dt,(Q_{solrad8}-Q_{conv8\to6}-Q_{IR8\to7}+Q_{cond9\to8}+0.75Q_{lower})}{c_8\rho_8 dx_8}
-  ]
+  
+  $dT_8=\frac{dt,(Q_{solrad8}-Q_{conv8\to6}-Q_{IR8\to7}+Q_{cond9\to8}+0.75Q_{lower})}{c_8\rho_8 dx_8}$
+
 * **(34)** (generic for multiple soil layers)
-  [
-  dT_i=\frac{dt,(Q_{cond,i+1\to i}-Q_{cond,i\to i-1})}{c_i\rho_i dx_i}
-  ]
+  
+  $dT_i=\frac{dt,(Q_{cond,i+1\to i}-Q_{cond,i\to i-1})}{c_i\rho_i dx_i}$
+
 * **(35)**
-  [
-  dT_{13}=\frac{dt,(Q_{cond13\to12}+Q_{IR14\to13})}{c_{13}\rho_{13} dx_{13}}
-  ]
+  
+  $dT_{13}=\frac{dt,(Q_{cond13\to12}+Q_{IR14\to13})}{c_{13}\rho_{13} dx_{13}}$
+
 * **(36)**
-  [
-  dT_{14}=\frac{dt,(Q_{solrad14}-Q_{conv14\to6}-Q_{IR14\to3}+Q_{cond15\to14}-Q_{IR14\to sky}-Q_{IR14\to13})}{c_{14}\rho_{14} dx_{14}}
-  ]
+  
+  $dT_{14}=\frac{dt,(Q_{solrad14}-Q_{conv14\to6}-Q_{IR14\to3}+Q_{cond15\to14}-Q_{IR14\to sky}-Q_{IR14\to13})}{c_{14}\rho_{14} dx_{14}}$
+
 * **(37)**
-  [
-  dT_{21}=\frac{dt,(Q_{cond21\to20})}{c_{21}\rho_{21} dx_{21}}
-  ]
+  
+  $dT_{21}=\frac{dt,(Q_{cond21\to20})}{c_{21}\rho_{21} dx_{21}}$
+
 
 **Curtain deployed (38–43):** 
 
 * **(38)**
-  [
-  dT_3=\frac{dt,(Q_{IR5\to3}+Q_{conv4\to3}+Q_{IR7\to3}+Q_{IR14\to3}-Q_{cond3\to2})}{c_3\rho_3 dx_3}
-  ]
+  
+  $dT_3=\frac{dt,(Q_{IR5\to3}+Q_{conv4\to3}+Q_{IR7\to3}+Q_{IR14\to3}-Q_{cond3\to2})}{c_3\rho_3 dx_3}$
+
 * **(39)**
-  [
-  dT_4=\frac{dt,(Q_{conv4\to3}+Q_{solrad4}-Q_{vent4}+Q_{conv5\to4})}{c_4\rho_4 dx_4}
-  ]
+  
+  $dT_4=\frac{dt,(Q_{conv4\to3}+Q_{solrad4}-Q_{vent4}+Q_{conv5\to4})}{c_4\rho_4 dx_4}$
+
 * **(40)**
-  [
-  dT_5=\frac{dt,(Q_{solrad5}+Q_{solradref5}+Q_{conv6\to5}+Q_{IR7\to5}+Q_{IR14\to5}-Q_{conv5\to4}-Q_{IR5\to sky}-Q_{IR5\to3}+0.75Q_{upper})}{c_5\rho_5 dx_5}
-  ]
+  
+  $dT_5=\frac{dt,(Q_{solrad5}+Q_{solradref5}+Q_{conv6\to5}+Q_{IR7\to5}+Q_{IR14\to5}-Q_{conv5\to4}-Q_{IR5\to sky}-Q_{IR5\to3}+0.75Q_{upper})}{c_5\rho_5 dx_5}$
+
 * **(41)**
-  [
-  dT_6=\frac{dt,(...+Q_{conv6\to5}-Q_{cool}+Q_{DH})}{c_6\rho_6 dx_6}
-  ]
+  
+  $dT_6=\frac{dt,(...+Q_{conv6\to5}-Q_{cool}+Q_{DH})}{c_6\rho_6 dx_6}$
+
   (same structure as (31) but with the added (Q_{conv6\to5}) and curtain-related pathways) 
 * **(42)**
-  [
-  dT_7=\frac{dt,(Q_{solrad7}+Q_{solradref7}-Q_{conv7\to6}-Q_{IR7\to3}-Q_{IR7\to5}+Q_{IR8\to7}-0.5Q_{trans7\to6}-Q_{IR7\to sky})}{c_7\rho_7 dx_7}
-  ]
-* **(43)**
-  [
-  dT_{14}=\frac{dt,(Q_{solrad14}-Q_{conv14\to6}-Q_{IR14\to3}+Q_{cond15\to14}-Q_{IR14\to sky}-Q_{IR14\to13}-Q_{IR14\to5})}{c_{14}\rho_{14} dx_{14}}
-  ]
+  
+  $dT_7=\frac{dt,(Q_{solrad7}+Q_{solradref7}-Q_{conv7\to6}-Q_{IR7\to3}-Q_{IR7\to5}+Q_{IR8\to7}-0.5Q_{trans7\to6}-Q_{IR7\to sky})}{c_7\rho_7 dx_7}$
 
-**Variables (shared across Appendix equations):** (dt) timestep; (dT_i) temperature change of layer (i); (c_i,\rho_i,dx_i) heat capacity, density, thickness of layer (i); each (Q_{*}) is a heat-flux pathway term named by its physics and direction (e.g., convection, conduction, radiation, ventilation, heaters, lights, pads, dehumidifier). 
+* **(43)**
+  
+  $dT_{14}=\frac{dt,(Q_{solrad14}-Q_{conv14\to6}-Q_{IR14\to3}+Q_{cond15\to14}-Q_{IR14\to sky}-Q_{IR14\to13}-Q_{IR14\to5})}{c_{14}\rho_{14} dx_{14}}$
+
+**Variables (shared across Appendix equations):** (dt) timestep; ($dT_i$) temperature change of layer (i); ($c_i$,$\rho_i$,$dx_i$) heat capacity, density, thickness of layer (i); each ($Q_{*}$) is a heat-flux pathway term named by its physics and direction (e.g., convection, conduction, radiation, ventilation, heaters, lights, pads, dehumidifier). 
 
 
