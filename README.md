@@ -52,28 +52,34 @@ $$
 Q_{\text{latent}}=\frac{R_a}{3600},dx,k,(v_{\text{inside}}-v_{\text{outside}})
 $$
 
-Variables: (Q_{\text{latent}}) latent heat flux due to air exchange; (R_a) air renewal rate (h(^{-1})); (dx) air-layer thickness; (k) latent heat of condensation; (v) absolute humidity (kg m(^{-3})). 
+Variables: ($Q_{\text{latent}}$) latent heat flux due to air exchange; ($R_a$) air renewal rate ($h(^{-1})$); (dx) air-layer thickness; (k) latent heat of condensation; (v) absolute humidity ($kg m(^{-3})$). 
 
 ---
 
 ## B) Dehumidification (MRD/HRV) and evaporative cooling pad
 
 **(4) Heat released to air by mechanical refrigeration dehumidifier (MRD)**
+
 $$
 Q_{DH}=0.9,Q_{eo}+\frac{m_{\text{water}},k}{900}\cdot\frac{1000}{0.25}\cdot\frac{1}{SA}
 $$
-Variables: (Q_{DH}) dehumidifier heat flux to air; (Q_{eo}) electrical energy (kWh); (m_{\text{water}}) water removed (kg); (k) latent heat; (SA) greenhouse surface area. 
+
+Variables: ($Q_{DH}$) dehumidifier heat flux to air; ($Q_{eo}$) electrical energy (kWh); ($m_{\text{water}}$) water removed (kg); (k) latent heat; (SA) greenhouse surface area. 
 
 **(5) Moisture removed by HRV per timestep**
+
 $$
 M_{\text{removed}}=(15\ \text{min})\cdot\frac{60\ \text{s}}{\text{min}}\cdot f_{HRV},(v_{out}-v_{in})
 $$
-Variables: (M_{\text{removed}}) moisture removed in the timestep (litres, per text); (f_{HRV}) supply airflow (m(^3) s(^{-1})); (v) absolute humidity (kg m(^{-3})) at HRV outlet/inlet. 
+
+Variables: ($M_{\text{removed}}$) moisture removed in the timestep (litres, per text); ($f_{HRV}$) supply airflow ($m(^3) s(^{-1})$); (v) absolute humidity ($kg m(^{-3})$) at HRV outlet/inlet. 
 
 **(6) Cooling-pad outlet air temperature**
+
 $$
 T_{pad}=T_{out}-g,(T_{out}-T_{out,wb})
 $$
+
 Variables: (T_{pad}) pad outlet temperature; (T_{out}) outdoor dry-bulb temp; (T_{out,wb}) outdoor wet-bulb temp; (g) pad efficiency. 
 
 **(7) Wet-bulb temperature approximation**
