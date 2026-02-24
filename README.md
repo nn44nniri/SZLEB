@@ -30,9 +30,11 @@ $$
 Variables: $f_{\text{leakage}}$ leakage flow factor; $c_{\text{leakage}}$ leakage constant; $u$ outdoor wind speed.
 
 **(1) Leakage flow factor (higher wind)**
+
 $$
 f_{\text{leakage}}=u,c_{\text{leakage}},\quad u\ge 0.25\ \text{m s}^{-1}
 $$
+
 Variables: same as above. 
 
 **(2) Mini-vent ventilation flow**
