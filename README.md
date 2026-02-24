@@ -400,7 +400,7 @@ These are the **discrete-time layer temperature updates** ($dT_i$) (energy balan
   
   $dT_6=\frac{dt,(...+Q_{conv6\to5}-Q_{cool}+Q_{DH})}{c_6\rho_6 dx_6}$
 
-  (same structure as (31) but with the added (Q_{conv6\to5}) and curtain-related pathways) 
+  (same structure as (31) but with the added ($Q_{conv6\to5}$) and curtain-related pathways) 
 * **(42)**
   
   $dT_7=\frac{dt,(Q_{solrad7}+Q_{solradref7}-Q_{conv7\to6}-Q_{IR7\to3}-Q_{IR7\to5}+Q_{IR8\to7}-0.5Q_{trans7\to6}-Q_{IR7\to sky})}{c_7\rho_7 dx_7}$
