@@ -85,7 +85,11 @@ Variables: ($T_{pad}$) pad outlet temperature; ($T_{out}$) outdoor dry-bulb temp
 **(7) Wet-bulb temperature approximation**
 
 $$
-T_{out,wb}=T_{out}- atan!\big(0.152,(RH_{out}+8.31)^{0.5}\big)+ atan(T_{out}+RH_{out})- atan(RH_{out}-1.68)+0.00392,RH_{out}^{1.5}, atan(0.023,RH_{out})-4.69
+T_{out,wb}=T_{out}-\atan!\big(0.152,(RH_{out}+8.31)^{0.5}\big)+\atan(T_{out}+RH_{out})-\atan(RH_{out}-1.68)+0.00392,RH_{out}^{1.5},\atan(0.023,RH_{out})-4.69
+$$
+
+$$
+T_{wb} = T \arctan\left(0.151977(RH + 8.313659)^{1/2}\right) + \arctan(T + RH) - \arctan(RH - 1.676331) + 0.00391838(RH)^{3/2} \arctan(0.023101 RH) - 4.686035
 $$
 
 Variables: ($T_{out,wb}$) wet-bulb temp; ($T_{out}$) dry-bulb temp; ($RH_{out}$) outdoor relative humidity (%). 
