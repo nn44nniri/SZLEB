@@ -409,6 +409,8 @@ These are the **discrete-time layer temperature updates** ($dT_i$) (energy balan
   
   $dT_{14}=\frac{dt,(Q_{solrad14}-Q_{conv14\to6}-Q_{IR14\to3}+Q_{cond15\to14}-Q_{IR14\to sky}-Q_{IR14\to13}-Q_{IR14\to5})}{c_{14}\rho_{14} dx_{14}}$
 
-**Variables (shared across Appendix equations):** (dt) timestep; ($dT_i$) temperature change of layer (i); ($c_i$,$\rho_i$,$dx_i$) heat capacity, density, thickness of layer (i); each ($Q_{*}$) is a heat-flux pathway term named by its physics and direction (e.g., convection, conduction, radiation, ventilation, heaters, lights, pads, dehumidifier). 
+**Variables (shared across Appendix equations):** 
+
+(dt) timestep; ($dT_i$) temperature change of layer (i); ($c_i$,$\rho_i$,$dx_i$) heat capacity, density, thickness of layer (i); each ($Q_{*}$) is a heat-flux pathway term named by its physics and direction (e.g., convection, conduction, radiation, ventilation, heaters, lights, pads, dehumidifier). 
 
 
