@@ -309,22 +309,24 @@ Other non-IR pathway formulas visible in Table 3 include:
 
 ## I) Core state-space / layer temperature update equations (Appendix)
 
-These are the **discrete-time layer temperature updates** (dT_i) (energy balance per layer). They are the “state equations” of the lumped-capacitance model.
+These are the **discrete-time layer temperature updates** ($dT_i$) (energy balance per layer). They are the “state equations” of the lumped-capacitance model.
 
 **No curtain (27–37):**  
 
 * **(27)**
-  [
-  dT_1=\frac{dt,(Q_{solrad1}+Q_{cond2\to1}-Q_{conv1\to amb}-Q_{IR1\to sky})}{c_1\rho_1 dx_1}
-  ]
+  
+  $dT_1=\frac{dt,(Q_{solrad1}+Q_{cond2\to1}-Q_{conv1\to amb}-Q_{IR1\to sky})}{c_1\rho_1 dx_1}$
+
 * **(28)**
-  [
-  dT_2=\frac{dt,(Q_{cond2\to1}+Q_{cond3\to2})}{c_2\rho_2 dx_2}
-  ]
+  
+  $dT_2=\frac{dt,(Q_{cond2\to1}+Q_{cond3\to2})}{c_2\rho_2 dx_2}$
+
 * **(29)**
-  [
+
+  $
   dT_3=\frac{dt,(Q_{solradref3}+Q_{conv4\to3}+Q_{IR5\to3}+Q_{IR12\to3}-Q_{cond3\to2})}{c_3\rho_3 dx_3}
-  ]
+  $
+  
 * **(30)**
   [
   dT_4=\frac{dt,(Q_{conv4\to3}+Q_{solrad4}-Q_{vent4}+0.75,Q_{upper})}{c_4\rho_4 dx_4}
