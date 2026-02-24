@@ -270,38 +270,46 @@ Variables: ($A_{canopy}$) plant area factor (effective emitting/absorbing area r
 Table 3 contains **many** individual pathway equations (solar, IR, conduction, ventilation, heating). The IR terms repeatedly use the Stefan–Boltzmann form “($\sigma$ $\times$) (view/coverage factors) ($\times$) (($\varepsilon_i$ $T_i^4$ - $\varepsilon_j$ $T_j^4$))”. Examples explicitly visible in the parsed text include:  
 
 * $(Q_{IR,7\to6}=\sigma,A_{crop},A_{canopy},(\varepsilon_7 T_7^4-\varepsilon_6 T_6^4))$ (plant ↔ potted soil) 
-* (Q_{IR,14\to13}=\sigma,A_{crop},(\varepsilon_{14} T_{14}^4-\varepsilon_{13} T_{13}^4)) (floor ↔ bottom soil layer) 
-* (Q_{IR,7\to5}=\sigma,A_{crop},(1-s_{IR,5}-a_{IR,5}),A_{canopy},(\varepsilon_7 T_7^4-\varepsilon_5 T_5^4)) (plant ↔ curtain) 
-* (Q_{IR,14\to5}=\sigma,(1-A_{crop}),(1-s_{IR,5}-a_{IR,5}),(\varepsilon_{14} T_{14}^4-\varepsilon_5 T_5^4)) (ground ↔ curtain) 
-* (Q_{IR,5\to3}=\sigma,(1-s_{IR,1}-a_{IR,1}),(\varepsilon_5 T_5^4-\varepsilon_3 T_3^4)) (curtain ↔ glazing) 
-* (Q_{IR,14\to sky}) and (Q_{IR,7\to sky}) are also written explicitly with factors including (s_{IR}), (A_{crop}), (A_{canopy}), (\varepsilon_{sky}), (T_{sky}). 
+* $(Q_{IR,14\to13}=\sigma,A_{crop},(\varepsilon_{14} T_{14}^4-\varepsilon_{13} T_{13}^4))$ (floor ↔ bottom soil layer) 
+* $(Q_{IR,7\to5}=\sigma,A_{crop},(1-s_{IR,5}-a_{IR,5}),A_{canopy},(\varepsilon_7 T_7^4-\varepsilon_5 T_5^4))$ (plant ↔ curtain) 
+* $(Q_{IR,14\to5}=\sigma,(1-A_{crop}),(1-s_{IR,5}-a_{IR,5}),(\varepsilon_{14} T_{14}^4-\varepsilon_5 T_5^4))$ (ground ↔ curtain) 
+* $(Q_{IR,5\to3}=\sigma,(1-s_{IR,1}-a_{IR,1}),(\varepsilon_5 T_5^4-\varepsilon_3 T_3^4))$ (curtain ↔ glazing) 
+* $(Q_{IR,14\to sky})$ and $(Q_{IR,7\to sky})$ are also written explicitly with factors including ($s_{IR}$), ($A_{crop}$), ($A_{canopy}$), ($\varepsilon_{sky}$), ($T_{sky}$). 
 
 Other non-IR pathway formulas visible in Table 3 include:
 
 * **Ventilation sensible heat loss**
+  
   $$
   Q_{vent,4&6}=\frac{R_a}{3600},(dx_4+dx_6),\rho_{air},c_{air},(T_6-T_{amb})
   $$
-  Variables: (R_a) air renewal rate; (dx_4,dx_6) air-layer thicknesses; (T_6) lower-air temperature; (T_{amb}) ambient outdoor temp. 
+  
+  Variables: ($R_a$) air renewal rate; ($dx_4,dx_6$) air-layer thicknesses; ($T_6$) lower-air temperature; ($T_{amb}$) ambient outdoor temp. 
 
 * **HRV sensible heat transfer**
+  
   $$
   Q_{HRV}=\frac{f_{HRV},\rho_{air},c_{air},(T_{out,HRV}-T_{in,HRV})}{SA}
   $$
-  Variables: (f_{HRV}) HRV airflow; (T_{out,HRV},T_{in,HRV}) HRV outlet/inlet temps; (SA) surface area. 
+  
+  Variables: ($f_{HRV}$) HRV airflow; ($T_{out,HRV},T_{in,HRV}$) HRV outlet/inlet temps; (SA) surface area. 
 
 * **Heating pipe convective input (upper/mid/lower)**
+  
   $$
   Q_{upper,mid,lower}=\frac{F,c_{water},(T_{in}-T_{out})}{SA}
-  
-  Variables: (F) hot-water mass flow term (as used by authors); (c_{water}) water heat capacity; (T_{in},T_{out}) pipe inlet/outlet water temps; (SA) surface area. 
   $$
+
+  Variables: (F) hot-water mass flow term (as used by authors); ($c_{water}$) water heat capacity; ($T_{in},T_{out}$) pipe inlet/outlet water temps; (SA) surface area. 
+  
 * **Conduction through soil layers**
+  
   $$
   Q_{cond}=k_{soil},\frac{(T_n-T_{n-1})}{0.5,dx_n+0.5,dx_{n-1}}
-  
-  Variables: (k_{soil}) soil conductivity; (T_n,T_{n-1}) layer temperatures; (dx_n,dx_{n-1}) layer thicknesses. 
   $$
+
+  Variables: (k_{soil}) soil conductivity; (T_n,T_{n-1}) layer temperatures; (dx_n,dx_{n-1}) layer thicknesses. 
+  
 ---
 
 ## I) Core state-space / layer temperature update equations (Appendix)
